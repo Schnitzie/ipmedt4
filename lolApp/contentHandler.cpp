@@ -7,7 +7,6 @@
 
 #include "contentHandler.h"
 
-
 //Constructor
 ContentHandler::ContentHandler() {
 

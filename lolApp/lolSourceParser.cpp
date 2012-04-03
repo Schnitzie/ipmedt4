@@ -5,6 +5,11 @@
  *      Author: Jan
  */
 
+#include "lolSourceParser.h"
 
+//Constructor
+LolSourceParser::LolSourceParser() {
+
+}
 
 

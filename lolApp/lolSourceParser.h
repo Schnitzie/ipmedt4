@@ -8,7 +8,12 @@
 #ifndef LOLSOURCEPARSER_H_
 #define LOLSOURCEPARSER_H_
 
+class LolSourceParser {
+private:
 
+public:
+	LolSourceParser();
+};
 
 
 #endif /* LOLSOURCEPARSER_H_ */

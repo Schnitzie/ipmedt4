@@ -6,5 +6,10 @@
  */
 
 
+#include "sourceCodeLoader.h"
 
+//Constructor
+SourceCodeLoader::SourceCodeLoader() {
+
+}
 
