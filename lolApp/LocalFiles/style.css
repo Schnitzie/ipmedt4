@@ -78,3 +78,32 @@ a {
 	background: url('images/background.png');
 
 }
+
+ul
+{	
+	margin: 0;
+	padding: 0;
+	padding-top: 25px;
+	list-style-type: none;
+	text-align: center;
+}
+
+ul li 
+{ 
+	display: inline; 
+}
+
+ul li a
+{
+	text-decoration: none;
+	padding: .3em 1.2em;
+	color: #fff;
+	font-size: 14px;
+}
+
+ul li a:hover
+{
+	color: black;
+
+}
+
