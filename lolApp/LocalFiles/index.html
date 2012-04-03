@@ -12,6 +12,9 @@
 		<title>LoL App</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script type="text/javascript" charset="utf-8" src="js/wormhole.js"></script>
+		<link rel="stylesheet" href="jquery.mobile-1.0.1.min.css" media="screen" title="no title" charset="utf-8">
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="js/jquery.mobile-1.0.1.min.js"></script>
 		<script type="text/javascript">
 			/**
 			 * Initialization.
@@ -88,19 +91,36 @@
 	
 		<div id="logo">
 		</div>
-		<div id="menu">
-			<ul>
-				<li style="border-right: 1px solid #8aa3ff;"><a href="">News</a></li>
-				<li style="border-right: 1px solid #8aa3ff;"><a href="">Competitive</a></li>
-				<li><a href="">Media</a></li>
+		<div id="menu" data-role="navbar">
+			<ul style="margin-top: 15px;  border: none;">
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">News</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Competitive</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Media</a></li>
 			</ul>
 		</div>
-		<div id="content">
-			<div id="imageslider">
-				<img style="margin-left: 10px; margin-top: 10px;" src="images/testimage.png">
+		<div id="content" data-role="content">
+		
+			<img src="images/testimage.png">
+			
+			<div data-role="collapsible-set">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>News item 1</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
+					
+				<div data-role="collapsible">
+					<h3>News item 2</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
 			</div>
-			<a href="http://www.facebook.com/leagueoflegends"><img style="margin-left: 3px;" src="images/facebookimg.png"></a>
-			<a href="http://www.youtube.com/user/RiotGamesInc"><img src="images/youtubeimg.png"></a>
 		</div>
+		
+		<div data-role="footer">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><a href="#"><img style="margin-left: 3px;" src="images/facebookimg.png"></a></div> <!-- http://www.facebook.com/leagueoflegends -->
+				<div class="ui-block-b"><a href="#"><img src="images/youtubeimg.png"></a></div> <!-- "http://www.youtube.com/user/RiotGamesInc -->
+			</fieldset>
+		</div>
+		
 	</body>
 </html>

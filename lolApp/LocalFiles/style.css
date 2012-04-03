@@ -25,7 +25,7 @@ body {
     margin: 0;
 }        
 
-a { 
+a. { 
 	color: white;
 	size: 12px;
 	text-decoration: none;
@@ -79,39 +79,27 @@ a {
 
 }
 
-#imageslider
-{
-	width: 300px;
-	height: 137px;
-	margin: auto;
-
-}
 
 ul
 {	
-	margin: 0;
-	padding: 0;
-	padding-top: 25px;
-	list-style-type: none;
-	text-align: center;
+	
 }
 
-ul li 
+.menu ul li 
 { 
-	display: inline; 
+	margin-top: 10px;
+	background-color: none;
+	
 }
 
-ul li a
+.menu ul li a
 {
-	text-decoration: none;
-	padding: .3em 1.2em;
-	color: #fff;
-	font-size: 14px;
+	
 }
 
-ul li a:hover
+.menu ul li a:hover
 {
-	color: black;
+	
 
 }
 
