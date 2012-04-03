@@ -56,11 +56,7 @@ public:
 		int width = EXTENT_X(scrSize);
 		int height = EXTENT_Y(scrSize);
 		char buf[512];
-		sprintf(
-			buf,
-			"{mosyncScreenWidth=%d; mosyncScreenHeight = %d;}",
-			width,
-			height);
+		sprintf(buf, "{mosyncScreenWidth=%d; mosyncScreenHeight = %d;}", width, height);
 		callJS(buf);
 
 		// Set the beep sound. This is defined in the
@@ -138,19 +134,15 @@ public:
 		while (message.next())
 		{
 			// This detects the PhoneGap protocol.
-			if (message.is("PhoneGap"))
-			{
+			if (message.is("PhoneGap")) {
 				mPhoneGapMessageHandler.handlePhoneGapMessage(message);
 			}
 			// Here we add our own messages. See index.html for
 			// the JavaScript code used to send the message.
-			else if (message.is("Custom"))
-			{
+			else if (message.is("Custom")) {
 				String command = message.getParam("command");
-				if (command == "vibrate")
-				{
-					int duration = message.getParamInt("duration");
-					maVibrate(duration);
+				if (command == "vibrate") {
+
 				}
 			}
 		}
@@ -192,15 +184,13 @@ public:
 				// Close the application (calls method in class Moblet).
 				close();
 			}
-			// Here we add your own messages. See index.html for
-			// the JavaScript code used to send the message.
-			else if (0 == strcmp(p, "Custom"))
-			{
+			//Custom commands
+			else if (0 == strcmp(p, "Custom")) {
 				const char* command = stream.getNext();
-				if (NULL != command && (0 == strcmp(command, "beep")))
-				{
-					// This is how to play the sound in the resource BEEP_WAV.
-					maSoundPlay(BEEP_WAV, 0, maGetDataSize(BEEP_WAV));
+				if (NULL != command) {
+					if(0 == strcmp(command, "beep")) {
+						close();
+					}
 				}
 			}
 		}
