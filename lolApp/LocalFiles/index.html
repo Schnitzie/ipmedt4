@@ -9,9 +9,12 @@
 	<head>
 		<meta name="viewport" content="width=320, user-scalable=no">
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>Wormhole Template App</title>
+		<title>LoL App</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 		<script type="text/javascript" charset="utf-8" src="js/wormhole.js"></script>
+		<link rel="stylesheet" href="jquery.mobile-1.0.1.min.css" media="screen" title="no title" charset="utf-8">
+		<script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+		<script src="js/jquery.mobile-1.0.1.min.js"></script>
 		<script type="text/javascript">
 			/**
 			 * Initialization.
@@ -82,21 +85,49 @@
 				document.body.style.backgroundColor = color;
 			}
 		</script>
+	
 	</head>
 	<body onload="initialize();">
-		<div id="screen">
-			<div class="pane" id="heading">Customized Wormhole Technology</div>
-			<div class="pane" id="info">
-				<div class="infoItem">Platform: <span id="platform">&nbsp;</span></div>
-				<div class="infoItem">Version: <span id="version">&nbsp;</span></div>
-				<div class="infoItem">UUID: <span id="uuid">&nbsp;</span></div>
-				<div class="infoItem">Name: <span id="name">&nbsp;</span></div>
-				<div class="infoItem">Width: <span id="width">&nbsp;</span></div>
-				<div class="infoItem">Height: <span id="height">&nbsp;</span></div>
-			</div>
-			<div class="pane button" onclick="vibrate();">Vibrate</div>
-			<div class="pane button" onclick="beep();">Beep</div>
-			<div class="pane button" onclick="changeColor();">Change Color</div>
+	
+		<div id="logo">
 		</div>
+		<div id="menu" data-role="navbar">
+			<ul style="margin-top: 13px;  border: none;">
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">News</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Competitive</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Media</a></li>
+			</ul>
+		</div>
+		<div id="content" data-role="content">
+			<p align="center">
+				<img src="images/testimage.png">
+			</p>
+			<div data-role="collapsible-set" data-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>News item 1</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>					
+				<div data-role="collapsible">
+					<h3>News item 2</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>News item 3</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>News item 4</h3>
+					<p>I'm the collapsible set content for section B.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div data-role="footer">
+			<fieldset class="ui-grid-a">
+				<div class="ui-block-a"><a><img style="margin-left: 3px;" src="images/facebookimg.png"></button></div> <!-- http://www.facebook.com/leagueoflegends -->
+				<div class="ui-block-b"><a><img src="images/youtubeimg.png"></button></div> <!-- "http://www.youtube.com/user/RiotGamesInc -->
+			</fieldset>
+		</div>
+		
 	</body>
 </html>
