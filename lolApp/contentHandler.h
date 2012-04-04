@@ -13,7 +13,7 @@
 
 class ContentHandler {
 private:
-	SourceCodeLoader sourcodeLoader;
+	SourceCodeLoader *sourcodeLoader;
 	LolSourceParser lolSourceParser;
 public:
 	ContentHandler();
