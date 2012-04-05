@@ -1,7 +1,7 @@
 /*
  * sourceCodeLoader.h
  *
- * Singleton object used for getting the sourcecode of a website.
+ * Singleton class used for getting the sourcecode of a website.
  *
  *  Link http://en.wikipedia.org/wiki/Singleton_pattern
  *  Created on: 3 apr. 2012
@@ -20,6 +20,14 @@
 
 using namespace MAUtil;
 
+
+/**
+ * Singleton class handling downloading sourcecode from a website
+ *
+ * Use sourceCodeLoader = sourceCodeLoader->getInstance() to create
+ * an instance of this Class instead of the usual sourceCodeLoader = new SourceCodeLoader()
+ *
+ */
 class SourceCodeLoader : public ConnectionListener {
 private:
 	/*
@@ -49,6 +57,16 @@ private:
 	 */
 	bool dataStatus;
 
+	/**
+	 * Int holding the length of the last received data
+	 */
+	int dataLen;
+
+	/**
+	 * Variable holding the connection in SourceCodeLoader
+	 */
+	Connection connection;
+
 	/*
 	 * ConnectionListner event functions
 	 */
@@ -69,6 +87,12 @@ public:
 	 * @return data
 	 */
 	char* getData();
+
+	/**
+	 * Setups a connection with an url and gets the data from it
+	 * @param url of a website
+	 */
+	void getDataFromUrl(char* url);
 
 	/**
 	 * Get a SourceLoaderInstance, following the Singleton Pattern
