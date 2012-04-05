@@ -12,4 +12,8 @@ ContentHandler::ContentHandler() {
 
 }
 
+void ContentHandler::idle() {
+
+}
+
 
