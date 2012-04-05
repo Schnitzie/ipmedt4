@@ -11,10 +11,12 @@
 #include "sourceCodeLoader.h"
 #include "lolSourceParser.h"
 
-class ContentHandler {
+class ContentHandler : public IdleListener{
 private:
 	SourceCodeLoader *sourcodeLoader;
 	LolSourceParser lolSourceParser;
+
+	void idle();
 public:
 	ContentHandler();
 };
