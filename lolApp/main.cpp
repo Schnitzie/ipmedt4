@@ -37,6 +37,7 @@ public:
 		mNativeUIMessageHandler(getWebView()),
 		mResourceMessageHandler(getWebView())
 	{
+		maScreenSetOrientation(SCREEN_ORIENTATION_DYNAMIC);
 		// Extract files in LocalFiles folder to the device.
 		extractFileSystem();
 
@@ -47,14 +48,16 @@ public:
 		// and the JavaScript code.
 		getWebView()->setVisible(true);
 
-		// The page in the "LocalFiles" folder to
-		// show when the application starts.
-		showPage("index.html");
-
-		// Send the Device Screen size to JavaScript.
 		MAExtent scrSize = maGetScrSize();
+
 		int width = EXTENT_X(scrSize);
 		int height = EXTENT_Y(scrSize);
+
+		// The page in the "LocalFiles" folder to
+		// show when the application starts.
+
+			showPage("index.html");
+		// Send the Device Screen size to JavaScript.
 		char buf[512];
 		sprintf(buf, "{mosyncScreenWidth=%d; mosyncScreenHeight = %d;}", width, height);
 		callJS(buf);

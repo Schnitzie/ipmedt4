@@ -51,9 +51,10 @@ a. {
 	width: 100%;
 	padding: 0;
 	height: 129px;
-	margin: 0;
+	float: left;
 	background: url('images/logo.png') no-repeat;
 	background-position: center;
+	background-color: yellow;
 	cursor: pointer;
 }
 
