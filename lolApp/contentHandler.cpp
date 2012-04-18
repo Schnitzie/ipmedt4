@@ -9,7 +9,6 @@
 
 //Constructor
 ContentHandler::ContentHandler() {
-
 }
 
 void ContentHandler::idle() {
