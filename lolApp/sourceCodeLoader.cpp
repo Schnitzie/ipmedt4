@@ -38,7 +38,6 @@ SourceCodeLoader::SourceCodeLoader() : connection(this) {
  * @return char
  */
 char* SourceCodeLoader::getData() {
-	printf("Size in class: %i", strlen(dataBuffer));
 	return dataBuffer;
 }
 
@@ -101,7 +100,6 @@ void SourceCodeLoader::getDataFromUrl(char* url) {
  */
 void SourceCodeLoader::connectFinished(Connection *conn, int result) {
 	connection.read(dataBuffer, BUFFSIZE);
-	printf("Status: %i", result);
 }
 
 /**
@@ -120,7 +118,6 @@ void SourceCodeLoader::connWriteFinished(Connection *conn, int result) {
 }
 
 void SourceCodeLoader::connReadFinished(Connection *conn, int result) {
-	printf("Read Result", result);
 	dataLen = result;
 	dataStatus = true;
 }
