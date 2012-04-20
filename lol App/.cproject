@@ -3,8 +3,8 @@
 
 <cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
-		<cconfiguration id="org.eclipse.cdt.core.default.config.440627554">
-			<storageModule buildSystemId="org.eclipse.cdt.core.defaultConfigDataProvider" id="org.eclipse.cdt.core.default.config.440627554" moduleId="org.eclipse.cdt.core.settings" name="Configuration">
+		<cconfiguration id="org.eclipse.cdt.core.default.config.1731080809">
+			<storageModule buildSystemId="org.eclipse.cdt.core.defaultConfigDataProvider" id="org.eclipse.cdt.core.default.config.1731080809" moduleId="org.eclipse.cdt.core.settings" name="Configuration">
 				<externalSettings/>
 				<extensions/>
 			</storageModule>
@@ -14,5 +14,4 @@
 	<storageModule moduleId="org.eclipse.cdt.core.pathentry">
 		<pathentry kind="con" path="com.mobilesorcery.mosync.includepaths"/>
 	</storageModule>
-	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

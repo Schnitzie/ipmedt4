@@ -99,7 +99,7 @@ void SourceCodeLoader::getDataFromUrl(char* url) {
  * @param result Returns HTTP status code
  */
 void SourceCodeLoader::connectFinished(Connection *conn, int result) {
-	connection.recv(dataBuffer, BUFFSIZE);
+	connection.read(dataBuffer, BUFFSIZE);
 }
 
 /**
@@ -118,6 +118,7 @@ void SourceCodeLoader::connWriteFinished(Connection *conn, int result) {
 }
 
 void SourceCodeLoader::connReadFinished(Connection *conn, int result) {
-
+	dataLen = result;
+	dataStatus = true;
 }
 

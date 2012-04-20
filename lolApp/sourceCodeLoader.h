@@ -57,10 +57,7 @@ private:
 	 */
 	bool dataStatus;
 
-	/**
-	 * Int holding the length of the last received data
-	 */
-	int dataLen;
+
 
 	/**
 	 * Variable holding the connection in SourceCodeLoader
@@ -99,6 +96,11 @@ public:
 	 * @return SourceCodeLoader instance
 	 */
 	static SourceCodeLoader* getInstance();
+
+	/**
+	 * Int holding the length of the last received data
+	 */
+	int dataLen;
 };
 
 

@@ -13,7 +13,7 @@
 
 class ContentHandler : public IdleListener{
 private:
-	SourceCodeLoader *sourcodeLoader;
+	SourceCodeLoader *sourceCodeLoader;
 	LolSourceParser lolSourceParser;
 
 	void idle();
