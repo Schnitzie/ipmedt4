@@ -18,7 +18,7 @@ DatabaseHandler::DatabaseHandler() : mHttp(this) {
  * Function that adds news to the database
  * @return true on succes
  */
-bool DatabaseHandler::addNews() {
+bool DatabaseHandler::addNews(NewsModel* news) {
 
 	MAUtil::String data = "?&key=aa&token=13453";
 
@@ -27,10 +27,10 @@ bool DatabaseHandler::addNews() {
 	MAUtil::String author = "&author=";
 	MAUtil::String date = "&date=";
 
-	title.append("Test", 4);
-	content.append("Nais nais this r contentz", 25);
-	author.append("Jan", 3);
-	date.append("Nu", 2);
+	title.append(news->title, strlen(news->title));
+	content.append(news->content, strlen(news->content));
+	author.append(news->author, strlen(news->author));
+	date.append(news->date, strlen(news->date));
 
 	data = data+title+content+author+date;
 
