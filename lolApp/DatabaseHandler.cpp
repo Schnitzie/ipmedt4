@@ -12,6 +12,46 @@ DatabaseHandler::DatabaseHandler() : mHttp(this) {
 	InitConsole();
 	gConsoleLogging = 1;
 	isDataReady = false;
+}
+
+bool DatabaseHandler::addNews() {
+
+	MAUtil::String data = "?&key=aa&token=13453";
+
+	MAUtil::String title = "&title=";
+	MAUtil::String content = "&content=";
+	MAUtil::String author = "&author=";
+	MAUtil::String date = "&date=";
+
+	title.append("Test", 4);
+	content.append("Nais nais this r contentz", 25);
+	author.append("Jan", 3);
+	date.append("Nu", 2);
+
+	data = data+title+content+author+date;
+
+	if(!mIsConnected) {
+		dataType = DATATYPE_NEWS;
+		isDataReady = false;
+		int res = mHttp.create("http://ehs-webdesign.nl/lolapp/addNews.php", HTTP_POST);
+		char buffer[10];
+		sprintf(buffer, "%d", data.length());
+		mHttp.setRequestHeader("Content-Length", buffer);
+
+
+		if(res < 0) {
+			return false;
+		} else {
+			mIsConnected = true;
+			mHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+			mHttp.setRequestHeader("User-Agent","Profile/MIDP-2.0 Configuration/CLDC-1.0");
+			mHttp.write(data.c_str(), data.length());
+			return true;
+		}
+	}
+	else {
+		return false;
+	}
 
 }
 
@@ -81,4 +121,9 @@ void DatabaseHandler::connReadFinished(MAUtil::Connection *conn, int result) {
 	mHttp.close();
 	mIsConnected = false;
 	isDataReady = true;
+}
+
+void DatabaseHandler::connWriteFinished(MAUtil::Connection *conn, int result){
+	mHttp.finish();
+	printf("result write: %i", result);
 }

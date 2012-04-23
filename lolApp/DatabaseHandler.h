@@ -21,7 +21,7 @@ public:
 	DatabaseHandler();
 
 	char* getNewsData();
-
+	bool addNews();
 	bool newsReady();
 	bool getNews();
 private:
@@ -34,6 +34,7 @@ private:
 	void httpFinished(MAUtil::HttpConnection *conn, int result);
 	void connRecvFinished(MAUtil::Connection *conn, int result);
 	void connReadFinished(MAUtil::Connection *conn, int result);
+	void connWriteFinished(MAUtil::Connection *conn, int result);
 };
 
 #endif /* DATABASEHANDLER_H_ */
