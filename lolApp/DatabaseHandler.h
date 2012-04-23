@@ -18,11 +18,33 @@
 class DatabaseHandler : public MAUtil::HttpConnectionListener
 {
 public:
+	/**
+	 * Constructor
+	 */
 	DatabaseHandler();
 
+	/**
+	 * Get the data stored in the buffer
+	 * @return json string with data
+	 */
 	char* getNewsData();
+
+	/**
+	 * Add News to the database
+	 * @return true if succesfull
+	 */
 	bool addNews();
+
+	/**
+	 * Check if getting data is ready
+	 * @return true if its ready
+	 */
 	bool newsReady();
+
+	/**
+	 * Start getting news from the database
+	 * @return true if connecting to the database is succesfull
+	 */
 	bool getNews();
 private:
 	char mBuffer[CONNECTION_BUFFER_SIZE];
