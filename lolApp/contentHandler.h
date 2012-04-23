@@ -38,6 +38,8 @@ private:
 
 	bool thereIsNeedToParse;
 
+	int cyclecounter;
+
 	void idle();
 public:
 	/**
