@@ -15,8 +15,4 @@ void ContentHandler::idle() {
 
 }
 
-void ContentHandler::idle() {
-
-}
-
 
