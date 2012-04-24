@@ -122,14 +122,14 @@ NewsModel* LolSourceParser::parseNews(char* temp_data) {
 
 	NewsModel* parse_news;
 	parse_news = new NewsModel();
-  if ( news_left > 4 )
-  {
+	if ( news_left > 4 )
+	{
 	  temp_data = temp_data;
-  }
-  else
-  {
+	}
+	else
+	{
 	  temp_data = data_c;
-  }
+	}
 
 	parse_news = this->parseNewsLoop(temp_data);
 	news_left = news_left-1;
@@ -142,13 +142,12 @@ NewsModel* LolSourceParser::parseNews(char* temp_data) {
  */
 bool LolSourceParser::parseMoreNews() {
 
-  if ( news_left > 0 )
-  {
-	  return true;
-  }
-  else
+  if ( news_left <= 0 )
   {
 	  return false;
+  }
+  else {
+	  return true;
   }
 
 }

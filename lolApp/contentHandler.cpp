@@ -36,7 +36,7 @@ ContentHandler::ContentHandler(WebView* main) {
  */
 void ContentHandler::idle() {
 	//The cyclecounter prevents the idle function to do too much checks every cycle and runs once a hundred cycles now.
-	if(cyclecounter > 100) {
+	if(cyclecounter > 200) {
 		if(thereIsNeedToParse) {
 			//If all the data is not ready yet, go check what is not ready
 			if(!this->dataReady) {
@@ -47,7 +47,6 @@ void ContentHandler::idle() {
 						if(lolSourceParser->parseMoreNews()) { // we parse once every cycle
 							NewsModel* news = lolSourceParser->parseNews(data);
 							database->addNews(news);
-
 
 							//TODO callJS function on the webview where we set the data to the handler
 
@@ -68,7 +67,7 @@ void ContentHandler::idle() {
 				}
 			}
 		}
-		else {
+		else {//If therse no need to parse the lol website we will get the data from the databse
 			if(!this->dataReady) {
 				if(database->newsReady()) {
 					char* news = database->getNewsData();
