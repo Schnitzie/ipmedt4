@@ -74,16 +74,9 @@
 			}
 
 			/**
-			 * Change page background to random color.
+			 * Content functions
 			 */
-			function changeColor()
-			{
-				var color = "#" +
-					(Math.random() * 0xFFFFFF + 0x1000000)
-						.toString(16).substr(1,6);
-				document.documentElement.style.backgroundColor = color;
-				document.body.style.backgroundColor = color;
-			}
+			
 		</script>
 	
 	</head>
@@ -93,9 +86,9 @@
 		</div>
 		<div id="menu" data-role="navbar">
 			<ul style="margin-top: 13px;  border: none;">
-				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">News</a></li>
-				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Competitive</a></li>
-				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Media</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#" onclick="goNews()">News</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#" onclick="goNotes()">Patch Notes</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#" onclick="goMedia()">Media</a></li>
 			</ul>
 		</div>
 		<div id="content" data-role="content">
@@ -104,29 +97,66 @@
 			</p>
 			<div data-role="collapsible-set" data-theme="e">
 				<div data-role="collapsible" data-collapsed="false">
-					<h3>News item 1</h3>
-					<p>I'm the collapsible set content for section B.</p>
+				
+					<h3 id="news1Header">The Underworld Has a Doorman</h3>
+						
+					<p id="news1Content">
+						<font size="1px" id="news1Date">04/21/2012 - 02:04</font>
+						<br>
+						Summoners!
+
+						Sometimes your travels around the world of Valoran are going to take you on the road to some exotic locales. If you stumble upon this menacing, red version of Galio in your travels, however, the odds are good that you’ve taken a wrong turn – especially if he’s perched on top of a massive, terrifying gate that’s emanating an eerie green glow. Then you might want to consult your cartographer to find out why he plotted you a course to the gates of the underworld before you set off.
+
+						Of course, with the Legendary Gatekeeper Galio standing watch, you might just want to be grateful you’re not trapped on the other side.
+					</p>
+					
 				</div>					
 				<div data-role="collapsible">
-					<h3>News item 2</h3>
-					<p>I'm the collapsible set content for section B.</p>
+					<h3 id="news2Header">Tune In To Great League Tournaments!</h3>
+					<p id="news2Content">
+						<font size="1px" id="news2Date">04/21/2012 - 00:30</font>
+						<br>
+						Summoners!
+	
+						Need a dose of League of Legends action this weekend? Some top-notch tournaments will stream live from April 20th through the 23rd. 
+						
+						National ESL Pro Series
+						
+						National ESL holds matches every week, featuring eight of the best teams in North America. This week’s line-up entails several high-level contenders, including Counter Logic Gaming, Curse Gaming, 4Not and Team SoloMid. The action begins Friday at 5:00 PM Pacific Time. You can watch it live on ESL.tv, and check out the full schedule here!
+						</p>
 				</div>
 				<div data-role="collapsible">
-					<h3>News item 3</h3>
-					<p>I'm the collapsible set content for section B.</p>
+					<h3 id="news3Header">Scarra Is Now Streaming Live!</h3>
+					<p id="news3Content">
+						<font size="1px" id="news3Date">04/20/2012 - 22:22</font>
+						Summoners!
+
+						Team Dignitas solo mid player Scarra will be streaming live today starting at 3PM Pacific Time! In addition to being one of the most dominant Mage carries in the League of Legends eSports scene, Scarra is famous for his positive attitude and informative commentary on stream. Come watch as he puts his skills to the test against the best that the Legends Solo Ladder has to offer.
+						
+						Click below to learn from one of the best solo mid players in League of Legends!
+					</p>
 				</div>
 				<div data-role="collapsible">
-					<h3>News item 4</h3>
-					<p>I'm the collapsible set content for section B.</p>
+					<h3 id="news4Header">Summoner Showcase #75</h3>
+					<p id="news4Content">
+						<font size="1px" id="news4Date">04/20/2012 - 03:03</font>
+						This week’s submissions are shining new light on some of our favorite champions. It’s no surprise that these gorgeous, immaculately detailed artistic submissions come from our very own League of Legends Community!
+					</p>
+				</div>
+				<div data-role="collapsible">
+					<h3 id="news5Header">Counts, Cherubs And Maffia Ladies In The Latest Sale</h3>
+					<p id="news5Content">
+						<font size="1px" id="news5Date">04/19/2012 - 23:47</font>
+						This week’s submissions are shining new light on some of our favorite champions. It’s no surprise that these gorgeous, immaculately detailed artistic submissions come from our very own League of Legends Community!
+					</p>
 				</div>
 			</div>
 		</div>
 		
-		<div data-role="footer">
-			<fieldset class="ui-grid-a">
-				<div class="ui-block-a"><a><img style="margin-left: 3px;" src="images/facebookimg.png"></a></div> <!-- http://www.facebook.com/leagueoflegends -->
-				<div class="ui-block-b"><a><img src="images/youtubeimg.png"></a></div> <!-- "http://www.youtube.com/user/RiotGamesInc -->
-			</fieldset>
+		<div data-role="footer" id="footer">
+				This LoL App was created by students form HS Leiden.
+				<br>
+				All rights reserved - 2012 - By The "Problem Solved" Team.
 		</div>
 		
 	</body>
