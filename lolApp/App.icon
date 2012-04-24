@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<icon>
+  	<instance size="default" src="icon.png" />
+  	<instance size="64x64" src="icon.png" />
+  	<instance size="default" src="icon.svg" />
+  	<instance size="64x64" src="icon.svg" />
+</icon>
