@@ -7,8 +7,22 @@
 
 #include "contentHandler.h"
 
-//Constructor
-ContentHandler::ContentHandler() {
+/**
+ * constructor
+ * @param main
+ */
+ContentHandler::ContentHandler(WebView* main) {
+	this->main = main;
+
+	sourceCodeLoader = new SourceCodeLoader();
+	lolSourceParser = new LolSourceParser();
+}
+
+/**
+ * Function that executes when there is nothing else to do
+ */
+void ContentHandler::idle() {
+
 }
 
 

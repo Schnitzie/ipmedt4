@@ -8,15 +8,35 @@
 #ifndef CONTENTHANDLER_H_
 #define CONTENTHANDLER_H_
 
+#include <Wormhole/WebAppMoblet.h>
+#include <Wormhole/MessageProtocol.h>
+#include <Wormhole/MessageStream.h>
+#include <Wormhole/Libs/JSONMessage.h>
+#include <Wormhole/Libs/PhoneGap/PhoneGapMessageHandler.h>
+#include <Wormhole/Libs/JSNativeUI/NativeUIMessageHandler.h>
+#include <Wormhole/Libs/JSNativeUI/ResourceMessageHandler.h>
+
 #include "sourceCodeLoader.h"
 #include "lolSourceParser.h"
+#include "lolapp.h"
 
-class ContentHandler {
+using namespace MAUtil; // Class Moblet
+using namespace NativeUI; // WebView widget.
+
+class ContentHandler : public IdleListener{
 private:
 	SourceCodeLoader *sourceCodeLoader;
-	LolSourceParser lolSourceParser;
+	LolSourceParser* lolSourceParser;
+
+	WebView* main;
+
+	void idle();
 public:
-	ContentHandler();
+	/**
+	 * constructor
+	 * @param main
+	 */
+	ContentHandler(WebView* main);
 };
 
 
