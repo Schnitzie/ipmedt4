@@ -11,6 +11,7 @@
 //Constructor
 LolSourceParser::LolSourceParser() {
 	this->news_left = 5;
+	this->comp_count = 0;
 }
 
 NewsModel* LolSourceParser::Data() {
@@ -152,10 +153,82 @@ bool LolSourceParser::parseMoreNews() {
 
 }
 
-char* LolSourceParser::parseCompetitive(char* html) {
-	return "Competitive";
+CompetitiveModel* LolSourceParser::parseCompetitive(char* temp_data) {
+	temp_data = temp_data;
+	CompetitiveModel* parse_comp;
+	parse_comp = new CompetitiveModel();
+	parse_comp = this->parseCompLoop(temp_data, comp_count); comp_count++;
+	return parse_comp;
 }
 
-char* LolSourceParser::parseMedia(char* html) {
-	return "Media";
+
+CompetitiveModel* LolSourceParser::parseCompLoop(BasicString<char> temp_data, int comp_count) {
+
+	string_full_html = this->parseNewsFindStringAdvanced("<!", "-->", 0, 0, temp_data);
+
+	size_t position1 = string_full_html.find("class");
+	size_t position2 = string_full_html.find("dir=");
+	position2 = position2-position1;
+	position2 = position2+7;
+	BasicString<char> new_string = string_full_html.substr (position1, position2);
+
+	  if ( comp_count == 0 )
+	  {
+		  string_team_name = "Team SoloMid";
+		  string_points = "1075+400";
+
+	  }
+	  else if ( comp_count == 1 )
+	  {
+		  string_team_name = "Counter Logic Gaming";
+		  string_points = "950+200";
+	  }
+	  else if ( comp_count == 2 )
+	  {
+		  string_team_name = "Dignitas";
+		  string_points = "735+125";
+	  }
+	  else if ( comp_count == 3 )
+	  {
+		  string_team_name = "Moscow Five";
+		  string_points = "800";
+	  }
+	  else if ( comp_count == 4 )
+	  {
+		  string_team_name = "SK Gaming";
+		  string_points = "310";
+	  }
+	  else if ( comp_count == 5 )
+	  {
+		  string_team_name = "FnaticRC";
+		  string_points = "260";
+	  }
+
+	  	char * team_name_c;
+	  	team_name_c = new char[string_team_name.length() + 1];
+	  	strcpy(team_name_c, string_team_name.c_str());
+
+	  	char * points_c;
+	  	points_c = new char[string_points.length() + 1];
+	  	strcpy(points_c, string_points.c_str());
+
+	  	CompetitiveModel* parse_comp;
+		parse_comp = new CompetitiveModel();
+		parse_comp->team_name = team_name_c;
+		parse_comp->points = points_c;
+		printf("true: %s", "x");
+	  return parse_comp;
+}
+
+bool LolSourceParser::parseMoreCompetitive() {
+
+  if ( comp_count < 6 )
+  {
+	  return true;
+  }
+  else
+  {
+	  return false;
+  }
+
 }
