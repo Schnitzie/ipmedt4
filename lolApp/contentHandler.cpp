@@ -14,7 +14,7 @@
 ContentHandler::ContentHandler(WebView* main) {
 	this->main = main;
 
-	sourceCodeLoader = new SourceCodeLoader();
+	//sourceCodeLoader = new SourceCodeLoader();
 	lolSourceParser = new LolSourceParser();
 }
 
