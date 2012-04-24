@@ -18,6 +18,7 @@
 
 #include "sourceCodeLoader.h"
 #include "lolSourceParser.h"
+#include "DatabaseHandler.h"
 #include "lolapp.h"
 
 using namespace MAUtil; // Class Moblet
@@ -27,8 +28,17 @@ class ContentHandler : public IdleListener{
 private:
 	SourceCodeLoader *sourceCodeLoader;
 	LolSourceParser* lolSourceParser;
+	DatabaseHandler* database;
 
 	WebView* main;
+
+	bool dataReady;
+	bool newsReady;
+	bool competitiveready;
+
+	bool thereIsNeedToParse;
+
+	int cyclecounter;
 
 	void idle();
 public:

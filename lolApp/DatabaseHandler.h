@@ -10,6 +10,7 @@
 
 #include <mautil/connection.h>
 #include <mastdlib.h>
+#include "newsModel.h"
 
 #define DATATYPE_NEWS 1
 
@@ -33,7 +34,7 @@ public:
 	 * Add News to the database
 	 * @return true if succesfull
 	 */
-	bool addNews();
+	bool addNews(NewsModel* news);
 
 	/**
 	 * Check if getting data is ready
