@@ -18,7 +18,7 @@ ContentHandler::ContentHandler(WebView* main) {
 	this->dataReady = false;
 	this->thereIsNeedToParse = true;
 	this->cyclecounter = 0;
-
+	this->newscounter = 1;
 	sourceCodeLoader = sourceCodeLoader->getInstance();
 	lolSourceParser = new LolSourceParser();
 	database = new DatabaseHandler();
@@ -44,12 +44,24 @@ void ContentHandler::idle() {
 				if(!this->newsReady) {
 					if(sourceCodeLoader->dataReady()) {
 						char* data = sourceCodeLoader->getData();
+
 						if(lolSourceParser->parseMoreNews()) { // we parse once every cycle
 							NewsModel* news = lolSourceParser->parseNews(data);
-							database->addNews(news);
 
-							//TODO callJS function on the webview where we set the data to the handler
 
+							WebViewMessage* messageescape;
+
+							char buf[2048];
+									sprintf(
+										buf,
+										"{title1=%s; content1 = %s; date1 = %s}",
+										news->title,
+										news->content,
+										news->date
+									);
+
+							main->callJS(buf);
+							newscounter++;
 						}
 						else { //means there is no more news to be parsed
 							this->newsReady = true;

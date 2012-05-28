@@ -15,11 +15,14 @@
 #include <Wormhole/Libs/PhoneGap/PhoneGapMessageHandler.h>
 #include <Wormhole/Libs/JSNativeUI/NativeUIMessageHandler.h>
 #include <Wormhole/Libs/JSNativeUI/ResourceMessageHandler.h>
+#include <Wormhole/WebViewMessage.h>
 
 #include "sourceCodeLoader.h"
 #include "lolSourceParser.h"
 #include "DatabaseHandler.h"
 #include "lolapp.h"
+#include "JSONParser.h"
+#include "Convert.h"
 
 using namespace MAUtil; // Class Moblet
 using namespace NativeUI; // WebView widget.
@@ -39,6 +42,7 @@ private:
 	bool thereIsNeedToParse;
 
 	int cyclecounter;
+	int newscounter;
 
 	void idle();
 public:

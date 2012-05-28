@@ -142,12 +142,12 @@ NewsModel* LolSourceParser::parseNews(char* temp_data) {
  */
 bool LolSourceParser::parseMoreNews() {
 
-  if ( news_left <= 0 )
+  if ( news_left > 0 )
   {
-	  return false;
+	  return true;
   }
   else {
-	  return true;
+	  return false;
   }
 
 }

@@ -15,14 +15,14 @@
 		<link rel="stylesheet" href="jquery.mobile-1.0.1.min.css" media="screen" title="no title" charset="utf-8">
 		<script src="js/jquery.js"></script>
 		<script src="js/jquery.mobile-1.0.1.min.js"></script>
-		<script type="text/javascript">
+		<script type="text/javascript">		
 			/**
 			 * Initialization.
 			 */
 			function initialize()
 			{
-				document.addEventListener("deviceready", displayDeviceInfo, true);
-				document.addEventListener("backbutton", close, true);
+				document.addEventListener("deviceready", setNews2, true);
+				document.getElementById('news1Header').innerHTML ='rofl';
 			}
 
 			/**
@@ -35,35 +35,6 @@
 			}
 
 			/**
-			 * Displays the device information on the screen.
-			 */
-			function displayDeviceInfo()
-			{
-				document.getElementById("platform").innerHTML = device.platform;
-				document.getElementById("version").innerHTML = device.version;
-				document.getElementById("uuid").innerHTML = device.uuid;
-				document.getElementById("name").innerHTML = device.name;
-				document.getElementById("width").innerHTML = screen.width;
-				document.getElementById("height").innerHTML = screen.height;
-			}
-
-			/**
-			 * Vibrate for 1 second.
-			 */
-			function vibrate()
-			{
-				// Send message to C++ to make device vibrate.
-				// We use the JSON format. The message will
-				// be delivered to C++ in a JSON array.
-				mosync.bridge.sendJSON(
-				{
-					"messageName":"Custom",
-					"command":"vibrate",
-					"duration":1000
-				});
-			}
-
-			/**
 			 * Play one beep sound.
 			 */
 			function beep()
@@ -72,10 +43,6 @@
 				// Here we used the string stream format.
 				mosync.bridge.send(["Custom", "beep"]);
 			}
-
-			/**
-			 * Content functions
-			 */
 			
 		</script>
 	
@@ -86,9 +53,9 @@
 		</div>
 		<div id="menu" data-role="navbar">
 			<ul style="margin-top: 13px;  border: none;">
-				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#" onclick="goNews()">News</a></li>
-				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#" onclick="goNotes()">Patch Notes</a></li>
-				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#" onclick="goMedia()">Media</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">News</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Patch Notes</a></li>
+				<li class="menu" style=" border: none;"><a style="background: none; color: white; border: none;" href="#">Media</a></li>
 			</ul>
 		</div>
 		<div id="content" data-role="content">

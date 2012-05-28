@@ -26,7 +26,6 @@ void JSONParser::reset()
 
 void JSONParser::parseString(String& jsondata)
 {
-  LOG("Starting JSON parse");
   data = jsondata;
   _start = 0;
   parse();
@@ -42,8 +41,6 @@ void JSONParser::parse()
       firstChar = data.c_str()[++_start];
 
     //Check the first character, if it is an [,],{ or } raise the approriate event
-
-    LOG("First char:%c", firstChar);
     if(firstChar == '[')
     {
       Vector_each(JSONListener*, itr, _listeners)
@@ -90,7 +87,6 @@ void JSONParser::parse()
       temp.clear();
       _end = data.findFirstOf(':', _start);
 
-      lprintfln("start %d end %d len %d", _start, _end, _end - _start);
       _end -= _start; //get the length
       if(_end > 0)
       {
@@ -141,13 +137,9 @@ void JSONParser::parse()
 
 int JSONParser::findNextQuote(int startPos)
 {
-  LOG("Looking for quote from %d", startPos);
   startPos = data.findFirstOf('\"', startPos);
-  LOG("Checking previous char to %d '%c'", startPos, data.c_str()[startPos-1]);
   if(data.c_str()[startPos-1] == '\\')
     startPos = findNextQuote(startPos + 1); //Ignore any \" pairs in the string data
-
-  LOG("Returning quote position at %d", startPos);
   return startPos;
 }
 
